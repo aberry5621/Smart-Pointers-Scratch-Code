@@ -52,10 +52,14 @@ int main(){
     
     auto p = make_shared<int>(42);
     
-    auto q(p); // copy?
+    auto q(p); // shallow copy?
     
     cout << "p: " << *p << endl;
+    cout << "q: " << *p << endl;
     
+    *p = 111; // shallow copy changes both smart pointers
+    
+    cout << "p: " << *p << endl;
     cout << "q: " << *p << endl;
     
     p = nullptr;
@@ -65,5 +69,31 @@ int main(){
     
 }
 
-
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
